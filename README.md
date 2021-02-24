@@ -2,6 +2,8 @@
 
 # encode jwt
 
+https://pyjwt.readthedocs.io/en/stable/
+
 1- when you provide a secret directly, not encoded example ('secret') will not work
 
 2- provide an encoded secret
