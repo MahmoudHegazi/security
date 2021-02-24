@@ -21,3 +21,12 @@ code = jwt.encode({'sub':'AccountNUmber.QTVR','nbf':'1501594247','exp':'15018600
 encoded_jwt = jwt.encode({"school": "udacity"}, "learning", algorithm="HS256")
 print(encoded_jwt)
 ```
+
+```
+encoded_jwt = jwt.encode({"school": "udacity"}, "learning", algorithm="HS256")
+print(encoded_jwt)
+decoded_jwt = jwt.decode(encoded_jwt, "learning", verify=True)
+print(decoded_jwt)
+decoded_base64 = base64.b64decode(str(encoded_jwt).split(".")[1]+"==")
+print(decoded_base64)
+```
