@@ -34,5 +34,6 @@ print(decoded_base64)
 # layer of secuirty in hash
 1. hash password + dynamic salat
 2. store salat in diffrent table make the forgien key userid + number (best select number from hashed password to add it) make it the first number in hashed as index)
-3. only problem if it read the server file itself 
+3. store the salat in diffrent database , and best is to store the forgein key in another table even the developer may not get the correct pass :D
+4. only problem if it read the server file itself 
 
