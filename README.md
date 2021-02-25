@@ -36,4 +36,5 @@ print(decoded_base64)
 2. store salat in diffrent table make the forgien key userid + number (best select number from hashed password to add it) make it the first number in hashed as index)
 3. store the salat in diffrent database , and best is to store the forgein key in another table even the developer may not get the correct pass :D
 4. only problem if it read the server file itself 
-
+5. as i said to protect submiting the hash valdaite first if submited password == hashed password before hash(post.password) == stored password
+6. this make it check if password submited was hashed which should not known by user
