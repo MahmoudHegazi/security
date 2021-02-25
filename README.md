@@ -30,3 +30,6 @@ print(decoded_jwt)
 decoded_base64 = base64.b64decode(str(encoded_jwt).split(".")[1]+"==")
 print(decoded_base64)
 ```
+
+# layer of secuirty in hash
+1- hash password + dynamic slat
