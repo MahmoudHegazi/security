@@ -32,4 +32,5 @@ print(decoded_base64)
 ```
 
 # layer of secuirty in hash
-1- hash password + dynamic slat
+1- hash password + dynamic salat
+2- store salat in diffrent table make the forgien key userid + number
