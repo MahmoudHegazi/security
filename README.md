@@ -38,3 +38,4 @@ print(decoded_base64)
 4. only problem if it read the server file itself 
 5. as i said to protect submiting the hash valdaite first if submited password == hashed password before hash(post.password) == stored password
 6. this make it check if password submited was hashed which should not known by user
+7. hash with key  + the salt + encrypted forigen for salat + 3 database tables  in 3 diffrent servers are most secured way
