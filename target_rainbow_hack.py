@@ -47,7 +47,6 @@ def hack():
         list_of_rainbow.append({'role':'','user':'','hashed':hashed,'pass':easy_pass})
     print('hashed complete')
     print('next step')
-    time.sleep(3)
     for i in leaked_users_table:
         hashed_hacked = leaked_users_table[i]['md5']
         noobuser = leaked_users_table[i]['username']
