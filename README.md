@@ -47,3 +47,13 @@ https://auth0.com/docs/flows/add-login-auth-code-flow
 
 1.  get the code not token
 2.  send request to get the token with that code it will include the data
+
+
+# test postMan
+
+```javascript
+pm.test("Status code is 401", function() {
+     pm.response.to.have.status(401);
+});
+
+```
