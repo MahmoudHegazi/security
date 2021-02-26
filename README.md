@@ -39,3 +39,11 @@ print(decoded_base64)
 5. as i said to protect submiting the hash valdaite first if submited password == hashed password before hash(post.password) == stored password
 6. this make it check if password submited was hashed which should not known by user
 7. hash with key  + the salt + encrypted forigen for salat + 3 database tables  in 3 diffrent servers are most secured way
+
+
+# get user info
+
+https://auth0.com/docs/flows/add-login-auth-code-flow
+
+1.  get the code not token
+2.  send request to get the token with that code it will include the data
