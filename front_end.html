@@ -1,0 +1,134 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+
+<h2>Get the current URL</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<p id="demo"></p>
+
+<script>
+
+  const postData = async(url = '', data = {}) => {
+  	console.log(data);
+  	const response = await fetch(url, {
+  		method: 'POST',
+  		credentials: 'same-origin',
+  		headers: {
+  			'Content-Type': 'application/json',
+  		},
+  		// Body data type must match "Content-Type" header
+  		body: JSON.stringify(data),
+  	});
+
+  	try {
+  		const newData = await response.json();
+      if (newData.code == 200){
+        alert('Hello User you are kind user welcome');
+      } else{
+        alert('Do not try to hack my system its for good people only I will send u virus');
+      }
+  		console.log(newData);
+  		return newData;
+  	} catch (error) {
+  		console.log("error", error);
+  	}
+  }
+
+/*
+  const postAuth = async(url = '', data = {}, token) => {
+  	console.log(data);
+  	const response = await fetch(url, {
+  		method: 'POST',
+  		credentials: 'same-origin',
+  		headers: {
+  			'Content-Type': 'application/json',
+        'Authorization': sanitize`Bearer ${token}`
+  		},
+  		// Body data type must match "Content-Type" header
+  		body: JSON.stringify(data),
+  	});
+
+  	try {
+  		const newData = await response.json();
+      if (newData.code == 200){
+        alert('Hello User you are kind user welcome');
+      } else{
+        alert('Do not try to hack my system its for good people only I will send u virus');
+      }
+  		console.log(newData);
+  		return newData;
+  	} catch (error) {
+  		console.log("error", error);
+  	}
+  }
+*/
+  function sanitize(strings, ...values) {
+      const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+      return DOMPurify.sanitize(dirty);
+  }
+
+
+const full_url = window.location.href;
+const token = full_url.split('#access_token=')[1].split('&expires_in=')[0];
+document.getElementById("demo").innerHTML = token.replace(/\s/g, '');;
+// postData('/token_verify',{'token':token,'z':'maalk ya3m'});
+// 'Authorization': sanitize`Bearer ${token}`
+const secure_token = sanitize`${token}`;
+
+localStorage.setItem("token", secure_token);
+
+const get_secure = localStorage.getItem(sanitize`token`);
+
+// 1postAuth('/kings', {token:'hi'}, get_secure);
+// console.log(sanitize`${get_secure}`);
+
+//localStorage.removeItem("token");
+postData('/token_verify',{'token':sanitize`${get_secure}`});
+
+
+
+
+// parse token
+function parseJwt(token) {
+   const base64Url = token.split('.')[1];
+   const base64 = decodeURIComponent(atob(base64Url).split('').map(  (c)=> {
+       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+
+   }).join(''));
+
+   return JSON.parse(base64);
+
+}
+let payloadObject = parseJwt(get_secure);
+console.log(payloadObject);
+// store token in localstorge lol response.jwt
+
+//alert(response.jwt);
+// 'Authorization': sanitize`Bearer ${get_secure}`
+//localStorage.setItem("token", token);
+
+// get token
+//console.log(localStorage.getItem("token"));
+
+// remove token with logout maybe
+//localStorage.removeItem("token");
+//console.log(localStorage.getItem("token"));
+
+// define vars
+
+/*
+sanitize for XSS attacks
+function sanitize(strings, ...values) {
+    const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    return DOMPurify.sanitize(dirty);
+}
+const first = 'Wes';
+const aboutMe = sanitize`I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+const html = `
+    <h3>${first}</h3>
+    ${aboutMe}
+`;
+const bio = document.querySelector('.bio');
+bio.innerHTML = html;
+
+*/
+
+</script>
