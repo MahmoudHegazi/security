@@ -65,6 +65,9 @@ image act as bat file  to excute the code
 
 https://stackoverflow.com/questions/8767708/execute-a-bat-file-when-an-image-is-viewed
 
+------------------------------------------------------------------------------------------------
+
+!this for learn not for hack 
 
 # my First Virus simple I created (.bat)
 
