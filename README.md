@@ -66,7 +66,7 @@ image act as bat file  to excute the code
 https://stackoverflow.com/questions/8767708/execute-a-bat-file-when-an-image-is-viewed
 
 
-# my First Virus simple I created
+# my First Virus simple I created (.bat)
 
 
 ```
