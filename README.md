@@ -60,3 +60,7 @@ pm.test("Status code is 401", function() {
 
 # some viruses
 https://techgrinch.com/create-a-virus/
+
+image act as bat file  to excute the code 
+
+https://stackoverflow.com/questions/8767708/execute-a-bat-file-when-an-image-is-viewed
