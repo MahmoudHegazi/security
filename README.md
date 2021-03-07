@@ -68,7 +68,7 @@ https://stackoverflow.com/questions/8767708/execute-a-bat-file-when-an-image-is-
 
 # my First Virus simple I created (.bat)
 
-this can be good if used with it command to auto run when pc start else it noob virus (task scheduler)
+* this can be good if used with it command to auto run when pc start else it noob virus (task scheduler)
 
 ```
 # hide show only output
